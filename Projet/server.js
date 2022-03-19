@@ -1,5 +1,6 @@
 // Aller chercher les configurations de l'application
 import 'dotenv/config';
+import router from './routes/routes.js';
 
 // Importer les fichiers et librairies
 import express, { json, urlencoded } from 'express';
@@ -19,27 +20,8 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-// Ajouter les routes ici ...
-// Ajout des routes
-app.get('/account', (request, response) => {
-    // Code à exécuter quand on reçoit un GET 
-    
-});
-
-app.post('/account', (request, response) => {
-    // Code à exécuter quand on reçoit un POST 
-    // sur la route /liste-to-do
-});
-
-app.delete('/liste-to-do', (request, response) => {
-    // Code à exécuter quand on reçoit un DELETE 
-    // sur la route /liste-to-do
-});
-
-app.get('/truc/machin/chose', (request, response) => {
-    // Code à exécuter quand on reçoit un GET 
-    // sur la route /truc/machin/chose
-});
+//Charger les routes du fichier externe "routes"
+app.use(router);
 // Renvoyer une erreur 404 pour les routes non définies
 app.use(function (request, response) {
     // Renvoyer simplement une chaîne de caractère indiquant que la page n'existe pas
