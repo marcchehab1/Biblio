@@ -7,9 +7,9 @@
         <!-- font cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="./css/account.css">
+    <link rel="stylesheet" href="./../public/css/style.css">
+    <link rel="stylesheet" href="./../public/css/normalize.css">
+    <link rel="stylesheet" href="./../public/./css/account.css">
 </head>
 <body>
     <header class="header">
@@ -30,7 +30,7 @@
     </header>
     <main>
         <div class="formAccount" >
-            <img src="./img/avatar.jpg" alt="avatar" class="avatar">
+            <img src="./../public/img/avatar.jpg" alt="avatar" class="avatar">
             <h1 class="titre-account"> Créer <span> un Compte</span></h1>
             <form method="post" id="formAccount" novalidate>
                 <input type="text" id="first-name" placeholder="Last name" required >
@@ -53,41 +53,7 @@
             </form>
 
             <script>
-                import {insertUtilisateur} from 'js/Utilisateurs.js';
-                import {db} from 'js/connection.js';
-               // function insertUtilisateur() {
-                    
-               // let prenom = document.getElementById("first-name")
-              //  let nom = document.getElementById("last-name")
-               // let password = document.getElementById("motPasse")
-               // let email = document.getElementById("email")
-               // let ville = document.getElementById("ville")
-               // let adresse = document.getElementById("adresse")
-               // let province = document.getElementById("province")
-               // insertUtilisateur = (prenom + ' ' + nom,mot_de_passe,email,ville,adresse,province)
-           // }
-            sql =
-            `INSERT INTO Utilisateur(
-              id_utilisateur,
-              nom_utilisateur,
-              mot_de_passe,
-              email,
-              ville,
-              addresse,
-              province,
-              id_type_utilisateur)
-              VALUES(2, jean jacques, 20102, ejfejwfj@live.com, g-town, 395 perdrix, qc, 1)`
-
-            //  VALUES(` + 2 + prenom + ' ' + nom + ',' + password + ',' + email + ',' + ville + ',' + adresse + ',' + province + 1 + ')'
-
-             connection.query(sql, function(error, results, fields) {
-                    if (!error) {
-                        console.log('SUCCESS!');
-                    } else {
-                        console.log('Insert into requests unsuccessful.');
-                        console.log('ERROR: ' + error);
-                    }
-                })
+            
             </script>
         </div>
     </main>

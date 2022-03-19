@@ -1,4 +1,4 @@
-import connectionPromise from './connection.js';
+import connectionPromise from '../database/connection.js';
 
 export const getAuteurs = async () => {
     // Attendre que la connexion à la base de données
