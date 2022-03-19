@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form account</title>
+        <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/account.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titre">Bibliothèque</h1>
+
+        <nav class="navbar">
+            <a href="./index.html">Accueil</a>
+            <a href="./thématique.html">Thématique</a>
+            <a href="./reservation.html">Réservation</a>
+            <a href="./login.html">Connexion</a>            
+            <a href="./contact.html">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-user" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+    <main>
+        <div class="formAccount" >
+            <img src="./img/avatar.jpg" alt="avatar" class="avatar">
+            <h1 class="titre-account"> Créer <span> un Compte</span></h1>
+            <form method="post" id="formAccount" novalidate>
+                <input type="text" id="first-name" placeholder="Last name" required >
+                <div id="first-name-error" class="error"></div>
+                <input type="text" id="last-name" placeholder="First name" required>
+                <div id="last-name-error" class="error"></div>
+                <input type="password" id="motPasse" placeholder="Password" required minlength="6" maxlength="12">
+                <div id="motpasse-error" class="error"></div>
+                <input type="email" id="email" placeholder="Email">
+                <div id="email-error" class="error"></div>
+                <input type="text" id="ville" placeholder="Ville" required>
+                <div id="ville-error" class="error"></div>
+                <input type="text" id="adresse" placeholder="Adresse" required>
+                <div id="adress-error" class="error"></div>
+                <input type="text" id="province" placeholder="Province" required>
+                <div id="province-error" class="error"></div>
+                <br><br><br>
+                <input type="Submit" id="submit" onclick = "insertUtilisateur()" value="Create account">    
+                    
+            </form>
+
+            <script>
+                import {insertUtilisateur} from 'js/Utilisateurs.js';
+                import {db} from 'js/connection.js';
+               // function insertUtilisateur() {
+                    
+               // let prenom = document.getElementById("first-name")
+              //  let nom = document.getElementById("last-name")
+               // let password = document.getElementById("motPasse")
+               // let email = document.getElementById("email")
+               // let ville = document.getElementById("ville")
+               // let adresse = document.getElementById("adresse")
+               // let province = document.getElementById("province")
+               // insertUtilisateur = (prenom + ' ' + nom,mot_de_passe,email,ville,adresse,province)
+           // }
+            sql =
+            `INSERT INTO Utilisateur(
+              id_utilisateur,
+              nom_utilisateur,
+              mot_de_passe,
+              email,
+              ville,
+              addresse,
+              province,
+              id_type_utilisateur)
+              VALUES(2, jean jacques, 20102, ejfejwfj@live.com, g-town, 395 perdrix, qc, 1)`
+
+            //  VALUES(` + 2 + prenom + ' ' + nom + ',' + password + ',' + email + ',' + ville + ',' + adresse + ',' + province + 1 + ')'
+
+             connection.query(sql, function(error, results, fields) {
+                    if (!error) {
+                        console.log('SUCCESS!');
+                    } else {
+                        console.log('Insert into requests unsuccessful.');
+                        console.log('ERROR: ' + error);
+                    }
+                })
+            </script>
+        </div>
+    </main>
+    <footer >
+        <p >&copy;Bibliothèque | &copy;Collège La Cité</p>
+        <p >Développé par &lt;Bilan-Marc-Walid-Stevens-Hamza&gt;</p>
+    </footer>
+</body>
+<script src="js/main.js"></script>
+</html>

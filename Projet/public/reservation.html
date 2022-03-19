@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form account</title>
+        <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/account.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titre">Bibliothèque</h1>
+
+        <nav class="navbar">
+            <a href="./index.html">Accueil</a>
+            <a href="./thématique.html">Thématique</a>
+            <a href="./reservation.html">Réservation</a>
+            <a href="./login.html">Connexion</a>            
+            <a href="./contact.html">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-user" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+    <main>
+        <script>
+            //Variable globale pour représenter le panier de l'utilisateur
+            let panier = []
+
+            export { panier };
+        </script>
+    </main>
+
+
+
+    <footer >
+        <p >&copy;Bibliothèque | &copy;Collège La Cité</p>
+        <p >Développé par &lt;Bilan-Marc-Walid-Stevens-Hamza&gt;</p>
+    </footer>
+</body>
+<script src="js/main.js"></script>
+</html>
